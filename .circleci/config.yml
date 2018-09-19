@@ -1,0 +1,21 @@
+
+version: 2
+jobs:
+  build:
+    docker:
+      - image: base/devel
+    working_directory: /data
+    steps:
+      - checkout
+      - run:
+        name: Copying file
+        command: |
+          cat list.txt | xargs -J % cp % .
+      - store_artifacts:
+          path: /data
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - build
