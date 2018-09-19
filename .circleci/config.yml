@@ -1,4 +1,3 @@
-
 version: 2
 jobs:
   build:
@@ -8,9 +7,9 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Copying file
-        command: |
-          cat list.txt | xargs -J % cp % .
+          name: Copying file
+          command: |
+            cat list.txt | xargs -J % cp % .
       - store_artifacts:
           path: /data
 
