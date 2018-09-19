@@ -9,9 +9,15 @@ jobs:
       - run:
           name: Copying file
           command: |
-            cat list.txt | xargs -I % cp % .
+            mkdir -p out
+            cat list.txt | xargs -I % cp % out
+      - run:
+          name: Packaging
+          command: |
+            cd out
+            tar cvJf ../arch.tar.xz *
       - store_artifacts:
-          path: /data
+          path: /data/arch.tar.xz
 
 workflows:
   version: 2
