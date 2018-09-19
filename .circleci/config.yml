@@ -9,7 +9,7 @@ jobs:
       - run:
           name: Copying file
           command: |
-            cat list.txt | xargs -J % cp % .
+            cat list.txt | xargs -I % cp % .
       - store_artifacts:
           path: /data
 
