@@ -21,3 +21,4 @@
 /usr/lib/libnss_files.so.2
 /usr/lib/libnss_myhostname.so.2
 /usr/lib/libnss_mymachines.so.2
+/usr/lib/ld-linux-x86-64.so.2
